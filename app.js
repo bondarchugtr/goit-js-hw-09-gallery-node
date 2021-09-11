@@ -103,14 +103,12 @@ function onOpenModalClick(event) {
         return;
     } else {
         event.preventDefault();
-
     }
     window.addEventListener('keydown', onEscapePress)
     refs.modal.classList.add('is-open')
     const target = event.target;
     onOpenImgModal(event.target.dataset.source, event.target.alt)
 }
-
 
 function onOpenImgModal(src, alt) {
     refs.imgModal.src = src;
@@ -133,7 +131,6 @@ function onEscapePress(event) {
         onClickArrowRight()
     }
 }
-
 function closeModalClick(event) {
     refs.modal.classList.remove('is-open')
     onOpenImgModal('', '')
@@ -169,27 +166,26 @@ function onClickArrowLeft(event) {
     );
     console.log(currentImgIndex)
 }
-
 let scrollPosition = 0;
 let counter = false;
-const trottled = _.throttle(doSomething, 3000)
-console.log(trottled)
+const debounce = _.debounce(doSomething, 3000);
+console.log(debounce)
 function doSomething(scroll_pos) {
+
     if (scroll_pos.target === scroll_pos.currentTarget) {
         onClickArrowRight()
-    } console.log(scroll_pos)
+    }
+    console.log(scroll_pos)
 }
 
-
-window.addEventListener('scroll',
+window.addEventListener('scroll', debounce,
     function (e) {
-        scrollPosition = window.scrollX;
+        scrollPosition = window.scrollY;
         if (!counter) {
             window.requestAnimationFrame(function () {
                 doSomething(scrollPosition);
                 counter = false;
             });
-            console.log(!counter)
             counter = true;
         }
     });
