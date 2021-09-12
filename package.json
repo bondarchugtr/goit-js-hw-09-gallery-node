@@ -1,0 +1,30 @@
+{
+  "name": "goit-js-hw-09-gallery-node",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "joi": "^17.4.2",
+    "lodash.debounce": "^4.0.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "parcel-bundler": "^1.12.5"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bondarchugtr/goit-js-hw-09-gallery-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bondarchugtr/goit-js-hw-09-gallery-node/issues"
+  },
+  "homepage": "https://github.com/bondarchugtr/goit-js-hw-09-gallery-node#readme",
+  "description": ""
+}

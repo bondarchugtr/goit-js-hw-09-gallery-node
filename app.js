@@ -166,12 +166,12 @@ function onClickArrowLeft(event) {
     );
     console.log(currentImgIndex)
 }
+
 let scrollPosition = 0;
 let counter = false;
 const debounce = _.debounce(doSomething, 3000);
 console.log(debounce)
 function doSomething(scroll_pos) {
-
     if (scroll_pos.target === scroll_pos.currentTarget) {
         onClickArrowRight()
     }
@@ -180,7 +180,7 @@ function doSomething(scroll_pos) {
 
 window.addEventListener('scroll', debounce,
     function (e) {
-        scrollPosition = window.scrollY;
+        scrollPosition = window.scrollX;
         if (!counter) {
             window.requestAnimationFrame(function () {
                 doSomething(scrollPosition);
